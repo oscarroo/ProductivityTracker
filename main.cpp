@@ -1,12 +1,26 @@
 #include <iostream>
 #include <Windows.h>
 #include <string>
+#include <fstream>
+
+
+int writeOutput(int time)
+{
+    std::ofstream myFile;
+    myFile.open("test.csv");
+    myFile << "Chrome time: ," + std::to_string(time);
+    myFile.close();
+
+    return 0;
+}
+
 
 int main()
 {
-    std::cout << "Hello world" << std::endl;
     int chromeTimeSeconds = 0; // tracks how long you use
 
+
+    writeOutput(200);
 
     while (true)
     {
